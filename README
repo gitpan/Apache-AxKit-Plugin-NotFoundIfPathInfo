@@ -1,4 +1,4 @@
-Apache-AxKit-Plugin-NotFoundIfPathInfo version 1.00
+Apache-AxKit-Plugin-NotFoundIfPathInfo version 1.01
 ===================================================
 
 This module is a very simple plugin for AxKit that returns NOT_FOUND if

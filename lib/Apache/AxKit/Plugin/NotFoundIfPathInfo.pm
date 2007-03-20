@@ -4,12 +4,17 @@ use strict;
 use Apache::Constants qw(OK NOT_FOUND);
 use Apache::Request;
 
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 sub handler {
     my $r = shift;
-    my $rv = length($r->path_info) ? NOT_FOUND : OK;
-    return $rv;
+    if (length($r->path_info)) {
+        $r->log->error("File does not exist: " . $r->filename . $r->path_info);
+        return NOT_FOUND;
+    }
+    else {
+        return OK;
+    }
 }
 
 1;
